@@ -1,3 +1,3 @@
-# coursera-single-page-web-apps-with-angularjs
+# Coursera: Single Page Web Applications With AngularJS
 
-# repository for course assignments
+## Repository for my course assignments
