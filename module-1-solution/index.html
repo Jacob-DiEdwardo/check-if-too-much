@@ -1,30 +1,35 @@
 <!doctype html>
-<html lang="en" ng-app="LunchCheck">
-  <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <style>
-      .message { font-size: 1.3em; font-weight: bold; }
-    </style>
-  </head>
-<body>
-   <div class="container" ng-controller="LunchCheckController">
-     <h1>Lunch Checker</h1>
-
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="{{placeholder}}"
-             class="form-control" ng-model="lunch">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-default" ng-click="">Check If Too Much</button>
-         </div>
-         <div class="form-group message" ng-model="">
-           <!-- Your message can go here. -->
-         </div>
-   </div>
-<script src="./js/angular.min.js"></script>
-<script src="./js/app.js"></script>
+<html lang="en">
+<head>
+  <title>Lunch Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script src="./js/angular.min.js"></script>
+</head>
+<body ng-app="LunchCheck">
+  <div class="container" ng-controller="LunchCheckController">
+    <h1>Lunch Checker</h1>
+    <p>List up to 3 of your favorite foods to eat for lunch!</p>
+    <p>Foods should be comma-separated. Empty items (i.e. ", ,") will not be counted</p>
+    <div class="form-group">
+      <input id="lunch-menu"
+              type="text"
+              placeholder="{{placeholder}}"
+              class="form-control border-transition"
+              ng-class="{'success-border': success, 'error-border': error}"
+              ng-model="lunch">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default" ng-click="checkLunch()">Check If Too Much</button>
+    </div>
+    <div ng-if="showMessage"
+         class="form-group message"
+         ng-class="{'success': success, 'error': error}"
+         ng-cloak>
+      {{message}}
+    </div>
+  </div>
+  <script src="./js/app.js"></script>
 </body>
 </html>

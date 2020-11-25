@@ -1,0 +1,25 @@
+.message {
+  font-size: 1.3em;
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+.border-transition {
+  transition: border 0.5s;
+}
+
+.success {
+  color: lightgreen;
+}
+
+.error {
+  color: red;
+}
+
+.success-border {
+  border: 2px solid lightgreen;
+}
+
+.error-border {
+  border: 2px solid red;
+}
