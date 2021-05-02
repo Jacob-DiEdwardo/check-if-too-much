@@ -11,8 +11,9 @@ function LunchCheckController($scope) {
   $scope.message = '';
   $scope.success = false;
   $scope.error = false;
+  $scope.checkLunch = checkLunch;
 
-  $scope.checkLunch = function() {
+  function checkLunch() {
     var lunchArray = $scope.lunch.split(',').filter(function(item) {return item.match(/\w+/g)});
     if (lunchArray.length === 0) {
       $scope.message = 'Please enter data first.';
@@ -24,7 +25,7 @@ function LunchCheckController($scope) {
       $scope.error = false;
     }
     $scope.showMessage = true;
-  };
+  }
 };
 
 })();
