@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Narrow Down Your Menu Choice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="../assets/js/angular.min.js"></script>
+</head>
+
+<body ng-app="NarrowItDownApp">
+  <div class="container" ng-controller="NarrowItDownCtrl as narrowItDownVm">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input ng-model="narrowItDownVm.searchTerm" type="text" placeholder="search term" class="form-control">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="narrowItDownVm.narrowItDown()">Narrow It Down For Me!</button>
+    </div>
+    <p class="nothing-found" ng-if="narrowItDownVm.nothingFound">Nothing found!</p>
+
+    <found-items ng-if='!narrowItDownVm.showLoader' found-items="narrowItDownVm.foundItems" on-remove="narrowItDownVm.removeItem(idx)"></found-items>
+    <items-loading-indicator show-loader="narrowItDownVm.showLoader"></items-loading-indicator>
+  </div>
+
+  <script type="text/ng-template" id="itemsloaderindicator.template.html">
+    <div ng-if="showLoader" class="loader-container">
+      <div class="loader"></div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="founditems.template.html">
+    <div class="found-items">
+      <p ng-if="foundItems.length">Items found: {{foundItems.length}}</p>
+      <div class="found-items-container">
+        <div class="found-item" ng-repeat="item in foundItems">
+          <h2 class="bold">Name: {{item.name}}</h2>
+          <p><span class="bold">Short Name: </span>{{item.short_name}}</p>
+          <p><span class="bold">Description: </span>{{item.description}}</p>
+          <button ng-click="onRemove({idx: $index})">Don't want this one!</button>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
