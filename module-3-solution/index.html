@@ -19,7 +19,7 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="narrowItDownVm.narrowItDown()">Narrow It Down For Me!</button>
     </div>
-    <p class="nothing-found" ng-if="narrowItDownVm.nothingFound">Nothing found!</p>
+    <p class="nothing-found" ng-if="narrowItDownVm.showNothingFoundMessage">Nothing found!</p>
 
     <found-items ng-if='!narrowItDownVm.showLoader' found-items="narrowItDownVm.foundItems" on-remove="narrowItDownVm.removeItem(idx)"></found-items>
     <items-loading-indicator show-loader="narrowItDownVm.showLoader"></items-loading-indicator>

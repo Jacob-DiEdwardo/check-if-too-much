@@ -19,7 +19,7 @@
       if (narrowItDownVm.searchTerm === '') {
         nothingFound();
       } else {
-        narrowItDownVm.nothingFound = false;
+        narrowItDownVm.showNothingFoundMessage = false;
         narrowItDownVm.showLoader = true;
         MenuSearchService.getMatchedMenuItems(narrowItDownVm.searchTerm).then(function(response) {
           if (response && response.length) {
@@ -36,7 +36,7 @@
     }
 
     function nothingFound() {
-      narrowItDownVm.nothingFound = true;
+      narrowItDownVm.showNothingFoundMessage = true;
       MenuSearchService.clearItems();
       narrowItDownVm.foundItems = MenuSearchService.getCurrentItems();
     }
