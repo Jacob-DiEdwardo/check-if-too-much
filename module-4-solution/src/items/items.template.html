@@ -1,0 +1,8 @@
+<p><span class="bold">Category:  </span>{{$ctrl.category}}</p>
+<p><span class="bold">Number of items:  </span>{{$ctrl.itemsData.length}}</p>
+<ul>
+    <li ng-repeat="item in $ctrl.itemsData">
+        <p><span class="bold">Name:  </span>{{item.name}}</p>
+        <p><span class="bold">Description:  </span>{{item.description}}</p>
+    </li>
+</ul>

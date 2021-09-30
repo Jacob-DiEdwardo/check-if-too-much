@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Our Chinese Menu!</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body ng-app="MenuApp">
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menuapp/menuapp.module.js"></script>
+    <script src="src/menudata/menudata.module.js"></script>
+    <script src="src/categories/categories.module.js"></script>
+    <script src="src/items/items.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- Artifacts -->
+    <script src="src/menudata/menudata.service.js"></script>
+    <script src="src/categoriesPage/categoriesPage.controller.js"></script>
+    <script src="src/categories/categories.component.js"></script>
+    <script src="src/itemsPage/itemsPage.controller.js"></script>
+    <script src="src/items/items.component.js"></script>
+    
+</body>
+</html>
